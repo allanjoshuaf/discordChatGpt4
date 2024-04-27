@@ -1,0 +1,34 @@
+{
+  "name": "chatgpt4",
+  "version": "1.0.0",
+  "description": "Discord Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allanjoshuaf/discordChatGpt4.git"
+  },
+  "keywords": [
+    "bot",
+    "discord",
+    "chatgpt",
+    "chat",
+    "gpt",
+    "bot"
+  ],
+  "author": "Ashkel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allanjoshuaf/discordChatGpt4/issues"
+  },
+  "homepage": "https://github.com/allanjoshuaf/discordChatGpt4#readme",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5",
+    "openai": "^4.38.3"
+  }
+}
