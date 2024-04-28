@@ -12,4 +12,11 @@ The long term project is about incoporating chat gpt bot into discord server. He
 Test discord bot with chat gpt 4 - can only send message but is fonctional 
 
 27.04.2024
-Connection to mongodb
+following is fonctional :
+1. Connection to mongodb
+2. Welcome channel
+3. remove channel
+4. personnal msg
+5. admin privilege
+6. simulate new member
+git push 28.04.2024
