@@ -1,16 +1,37 @@
 require('dotenv/config');
 const { Client } = require('discord.js');
+const { CommandKit } = require('commandkit');
 const { OpenAI } = require('openai');
+const mongoose =require('mongoose');
 
+//Avaible to :
 const client = new Client ({
     intents: ['Guilds', 'GuildMembers', 'GuildMessages', 'MessageContent']
 });
 
-client.on('ready', ()=>{
-   console.log('Chat GPT is Online'); 
+new CommandKit({
+    client,
+    commandsPath: `${__dirname}/commands`,
+    eventsPath: `${__dirname}/events`,
+    devGuildIds: ['1065712910573252709'],
+    devUserIds: ['397869534167433216'],
+    bulkRegister: true,
 });
 
+mongoose.set('strictQuery', false);
+mongoose.connect(process.env.MONGODB_URI).then(() => {
+    console.log('Connected to database');
+    client.login(process.env.TOKEN);
+})
+
+//To turn On the bot, node index.js and the following line will appear
+client.on('ready', ()=>{
+   console.log('Chat GPT is Online \nWelcome !'); 
+});
+
+//If person doesnt start his message by !, he'll be speaking rigth away to gpt
 const IGNORE_PREFIX = "!";
+//Channels where gpt is avaible (Private for testing purpose)
 const CHANNELS = ['1232665112582553600'];
 
 const openai = new OpenAI({
@@ -82,5 +103,3 @@ client.on('messageCreate', async (message) => {
         await message.reply(chunk);
     }
 });
-
-client.login(process.env.TOKEN);

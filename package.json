@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/allanjoshuaf/discordChatGpt4#readme",
   "dependencies": {
+    "commandkit": "^0.1.10",
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
     "openai": "^4.38.3"
